@@ -40,4 +40,4 @@ module.exports = {
 }
 ```
 
-### 5. Use tailwind within source files
+_now can use tailwind within source files_
