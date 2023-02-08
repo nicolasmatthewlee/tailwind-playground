@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* must be wrapped in @layer components or must occur before
+utilities to allow additional utility classes to override */
+
+/* in general, better to not use @apply because then the styles
+are separated from where they are used; which decreases
+readability and maintainability in the long-run */  
+@layer components {
+    .btn {
+        @apply inline-block bg-brand hover:bg-brand-light hover:-translate-y-0.5 transition px-4 shadow-lg py-2 text-white text-xs sm:text-base uppercase font-medium rounded-lg focus:outline-none focus:ring focus:ring-offset-2 focus:ring-brand focus:ring-opacity-50
+    }
+}

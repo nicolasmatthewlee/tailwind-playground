@@ -1,183 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/output.css" />
     <title>Tailwind</title>
-</head>
+    <!-- load custom font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body class="space-y-4 bg-slate-100">
-
+  <body class="space-y-4 bg-slate-100">
     <h1 class="text-3xl font-bold mx-auto max-w-xs text-center mt-4">
-        Tailwind
+      Tailwind
     </h1>
 
     <!-- Refactoring UI -->
 
     <form class="bg-white max-w-sm m-auto p-4 rounded-lg shadow-lg space-y-4">
+      <div class="space-y-1">
+        <label for="">Leaving from...</label>
+        <input class="bg-slate-200 w-full rounded-sm p-1" type="text" />
+      </div>
+      <div class="space-y-1">
+        <label for="">Going to...</label>
+        <input class="bg-slate-200 w-full rounded-sm p-1" type="text" />
+      </div>
+      <div class="flex w-full space-x-4">
         <div class="space-y-1">
-            <label for="">Leaving from...</label>
-            <input class="bg-slate-200 w-full rounded-sm p-1" type="text">
+          <label for="">Depart</label>
+          <input class="bg-slate-200 w-full rounded-sm p-1" type="text" />
         </div>
         <div class="space-y-1">
-            <label for="">Going to...</label>
-            <input class="bg-slate-200 w-full rounded-sm p-1" type="text">
-
+          <label for="">Return</label>
+          <input class="bg-slate-200 w-full rounded-sm p-1" type="text" />
         </div>
-        <div class="flex w-full space-x-4">
-            <div class="space-y-1">
-                <label for="">Depart</label>
-                <input class="bg-slate-200 w-full rounded-sm p-1" type="text">
-            </div>
-            <div class="space-y-1">
-                <label for="">Return</label>
-                <input class="bg-slate-200 w-full rounded-sm p-1" type="text">
-            </div>
-        </div>
-        <button class="rounded-sm py-2 font-semibold text-sm text-white bg-black w-full">Search Flights</button>
+      </div>
+      <button
+        class="rounded-sm py-2 font-semibold text-sm text-white bg-black w-full"
+      >
+        Search Flights
+      </button>
     </form>
 
     <form class="bg-white max-w-sm m-auto rounded-lg shadow-lg">
-        <div class="p-4 space-y-4">
-            <div class="flex space-x-4">
-                <div class="flex items-center space-x-2 text-sm">
-                    <input class="w-5 h-5" type="radio" name="trip" id="round-trip">
-                    <label class="text-slate-600" for="round-trip">Round Trip</label>
-                </div>
-                <div class="flex items-center space-x-2 text-sm">
-                    <input class="w-5 h-5" type="radio" name="trip" id="one-way">
-                    <label class="text-slate-600" for="one-way">One Way</label>
-                </div>
-            </div>
-            <div class="relative">
-                <label for="from">
-                    <svg class="h-full absolute px-2 py-2 stroke-slate-400" xmlns="http://www.w3.org/2000/svg"
-                        fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                    </svg>
-                </label>
-                <input id="from" class="placeholder-slate-600 h-10 text-sm pl-10 bg-slate-200 w-full rounded-sm p-1"
-                    type="text" placeholder="Leaving from...">
-            </div>
-            <div class="relative">
-                <label for="to">
-                    <svg class="absolute h-full px-2 py-2 stroke-slate-400" xmlns="http://www.w3.org/2000/svg"
-                        fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                    </svg>
-                </label>
-                <input id="to" class="placeholder-slate-600 h-10 text-sm pl-10 bg-slate-200 w-full rounded-sm p-1"
-                    type="text" placeholder="Going to...">
-            </div>
-            <div class="flex w-full space-x-4">
-                <div class="relative">
-                    <label for="departure">
-                        <svg class="absolute h-full px-2 py-2 stroke-slate-400" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-                        </svg>
-                    </label>
-                    <input id="departure"
-                        class="placeholder-slate-600 h-10 text-sm pl-10 bg-slate-200 w-full rounded-sm p-1" type="text"
-                        placeholder="Depart">
-                </div>
-                <div class="relative">
-                    <label for="return">
-                        <svg class="px-2 py-2 absolute h-full stroke-slate-400" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-                        </svg>
-                    </label>
-                    <input id="return"
-                        class="placeholder-slate-600 h-10 text-sm pl-10 bg-slate-200 w-full rounded-sm p-1" type="text"
-                        placeholder="Return">
-                </div>
-            </div>
-            <div class="flex w-full space-x-4">
-                <div class="relative flex-1">
-                    <label for="passengers">
-                        <svg class="absolute h-full px-2 py-2 stroke-slate-400" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
-                        </svg>
-                    </label>
-                    <input id="passengers"
-                        class="placeholder-slate-600 h-10 pl-10 bg-slate-200 w-full rounded-sm p-1 text-sm"
-                        type="number" placeholder="Passengers">
-                </div>
-                <div class="relative flex-1">
-                    <label for="class-select">
-                        <svg class="absolute h-full px-2 py-2 stroke-slate-400" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-                        </svg>
+      <div class="p-4 space-y-4">
+        <div class="flex space-x-4">
+          <div class="flex items-center space-x-2 text-sm">
+            <input class="w-5 h-5" type="radio" name="trip" id="round-trip" />
+            <label class="text-slate-600" for="round-trip">Round Trip</label>
+          </div>
+          <div class="flex items-center space-x-2 text-sm">
+            <input class="w-5 h-5" type="radio" name="trip" id="one-way" />
+            <label class="text-slate-600" for="one-way">One Way</label>
+          </div>
+        </div>
+        <div class="relative">
+          <label for="from">
+            <svg
+              class="h-full absolute px-2 py-2 stroke-slate-400"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+              />
+            </svg>
+          </label>
+          <input
+            id="from"
+            class="placeholder-slate-600 h-10 text-sm pl-10 bg-slate-200 w-full rounded-sm p-1"
+            type="text"
+            placeholder="Leaving from..."
+          />
+        </div>
+        <div class="relative">
+          <label for="to">
+            <svg
+              class="absolute h-full px-2 py-2 stroke-slate-400"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+              />
+            </svg>
+          </label>
+          <input
+            id="to"
+            class="placeholder-slate-600 h-10 text-sm pl-10 bg-slate-200 w-full rounded-sm p-1"
+            type="text"
+            placeholder="Going to..."
+          />
+        </div>
+        <div class="flex w-full space-x-4">
+          <div class="relative">
+            <label for="departure">
+              <svg
+                class="absolute h-full px-2 py-2 stroke-slate-400"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                />
+              </svg>
+            </label>
+            <input
+              id="departure"
+              class="placeholder-slate-600 h-10 text-sm pl-10 bg-slate-200 w-full rounded-sm p-1"
+              type="text"
+              placeholder="Depart"
+            />
+          </div>
+          <div class="relative">
+            <label for="return">
+              <svg
+                class="px-2 py-2 absolute h-full stroke-slate-400"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                />
+              </svg>
+            </label>
+            <input
+              id="return"
+              class="placeholder-slate-600 h-10 text-sm pl-10 bg-slate-200 w-full rounded-sm p-1"
+              type="text"
+              placeholder="Return"
+            />
+          </div>
+        </div>
+        <div class="flex w-full space-x-4">
+          <div class="relative flex-1">
+            <label for="passengers">
+              <svg
+                class="absolute h-full px-2 py-2 stroke-slate-400"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z"
+                />
+              </svg>
+            </label>
+            <input
+              id="passengers"
+              class="placeholder-slate-600 h-10 pl-10 bg-slate-200 w-full rounded-sm p-1 text-sm"
+              type="number"
+              placeholder="Passengers"
+            />
+          </div>
+          <div class="relative flex-1">
+            <label for="class-select">
+              <svg
+                class="absolute h-full px-2 py-2 stroke-slate-400"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
+                />
+              </svg>
+            </label>
+            <select
+              class="text-slate-600 h-10 pl-10 bg-slate-200 w-full rounded-sm p-2 text-sm border-r-4"
+              id="class-select"
+            >
+              <option value="economy" selected>Economy class</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button
+        class="rounded-b-lg py-4 font-semibold text-sm text-white bg-black w-full hover:bg-gray-700"
+      >
+        SEARCH FLIGHTS
+      </button>
+    </form>
 
-                    </label>
-                    <select class="text-slate-600 h-10 pl-10 bg-slate-200 w-full rounded-sm p-2 text-sm border-r-4"
-                        id="class-select">
-                        <option value="economy" selected>Economy class</option>
-                    </select>
-                </div>
+    <!-- Tailwind CSS v2.0: From Zero to Production -->
+
+    <div class="border-y-4">
+      <div class="grid lg:grid-cols-2 2xl:grid-cols-3">
+        <!-- left side -->
+        <div
+          class="max-w-md mx-auto sm:max-w-xl lg:max-w-full px-8 py-8 lg:py-12"
+        >
+          <div class="xl:mr-0 xl:max-w-lg">
+            <div>
+              <img class="h-10" src="./assets/logo-brand.svg" alt="" />
             </div>
+            <div class="mt-4 sm:mt-6">
+              <img
+                class="lg:hidden rounded-lg sm:h-72 sm:w-full sm:object-cover"
+                src="./assets/beach-work.jpg"
+                alt=""
+              />
+            </div>
+            <h1
+              class="font-headline tracking-tight mt-4 sm:mt-6 text-2xl sm:text-4xl lg:text-3xl font-bold text-gray-900"
+            >
+              You can work from anywhere.<br /><span class="text-brand"
+                >Take advantage of it.</span
+              >
+            </h1>
+            <p class="mt-2 sm:text-xl lg:text-lg text-gray-500">
+              Workcation helps you find work-friendly rentals in beautiful
+              locations so you can enjoy some nice weather when you're not on
+              vacation.
+            </p>
+            <div class="mt-4 sm:mt-6">
+              <a href="#" class="btn">book your escape</a>
+            </div>
+          </div>
         </div>
 
-        <button class="rounded-b-lg py-4 font-semibold text-sm text-white bg-black w-full hover:bg-gray-700">SEARCH
-            FLIGHTS</button>
-    </form>
+        <!-- right side -->
+        <div class="hidden lg:block relative 2xl:col-span-2">
+          <img
+            class="absolute inset-0 w-full h-full object-cover"
+            src="./assets/beach-work.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
 
     <!-- Examples from the documentation -->
 
-    <div class="p-6 bg-white shadow-lg rounded-xl mx-auto max-w-xs flex items-center space-x-4">
-        <svg class="h-12 w-12 stroke-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-        </svg>
+    <div
+      class="p-6 bg-white shadow-lg rounded-xl mx-auto max-w-xs flex items-center space-x-4"
+    >
+      <svg
+        class="h-12 w-12 stroke-blue-500"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+        />
+      </svg>
 
-        <div>
-            <div class="text-xl font-medium">ChitChat</div>
-            <p class="text-slate-500">You have a new message!</p>
-        </div>
+      <div>
+        <div class="text-xl font-medium">ChitChat</div>
+        <p class="text-slate-500">You have a new message!</p>
+      </div>
     </div>
 
     <div
-        class="p-8 bg-white max-w-xs max-w-sm m-auto items-center shadow-lg rounded-xl sm:flex sm:space-y-0 sm:max-w-sm sm:space-x-4 sm:p-4">
-        <svg class="m-auto sm:m-0 h-24 w-24 stroke-slate-200" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
+      class="p-8 bg-white max-w-xs max-w-sm m-auto items-center shadow-lg rounded-xl sm:flex sm:space-y-0 sm:max-w-sm sm:space-x-4 sm:p-4"
+    >
+      <svg
+        class="m-auto sm:m-0 h-24 w-24 stroke-slate-200"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+        />
+      </svg>
 
-        <div class="text-center space-y-2 sm:text-left">
-            <div class="space-y-0.5">
-                <h1 class="text-lg font-semibold">Erin Lindford</h1>
-                <h2 class="text-slate-500 font-medium">Product Engineer</h2>
-            </div>
-            <button
-                class="px-4 py-1 rounded-full text-sm text-purple-500 font-semibold border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Message</button>
+      <div class="text-center space-y-2 sm:text-left">
+        <div class="space-y-0.5">
+          <h1 class="text-lg font-semibold">Erin Lindford</h1>
+          <h2 class="text-slate-500 font-medium">Product Engineer</h2>
         </div>
+        <button
+          class="px-4 py-1 rounded-full text-sm text-purple-500 font-semibold border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+        >
+          Message
+        </button>
+      </div>
     </div>
 
     <div class="p-4 bg-white shadow-lg rounded-xl mx-8">
-        <p>This is a text section.</p>
+      <p>This is a text section.</p>
     </div>
 
-    <div class="font-semibold p-6 text-lg container mx-auto bg-slate-500 text-white text-center">
-        <p>The container class sets the max-width of an element to match the minimum width of the current breakpoint.
-        </p>
+    <div
+      class="font-semibold p-6 text-lg container mx-auto bg-slate-500 text-white text-center"
+    >
+      <p>
+        The container class sets the max-width of an element to match the
+        minimum width of the current breakpoint.
+      </p>
     </div>
-
-</body>
-
+  </body>
 </html>

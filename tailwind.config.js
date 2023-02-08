@@ -2,7 +2,9 @@
 module.exports = {
   content: ["./index.html"],
   theme: {
-    extend: {},
+    extend: {
+      colors: { brand: "#0fa9e6", "brand-light": "#3fbaeb" },
+      fontFamily: { headline: "Poppins, sans-serif" },
+    },
   },
-  plugins: [],
 };
